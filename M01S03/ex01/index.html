@@ -6,15 +6,22 @@
   </head>
   <body>
 
-    <script>
-      var object = {
-        name: 'Dragos', 
-        surname: 'Iordache', 
-        age: 32
-      };
+  <script>
+    var object = {
+      name: 'Laurentiu', 
+      surname: 'Ivan', 
+      age: 27,
+      petOwner: true,
+      carOwner: true
+    };
 
-      console.log(object);
-      console.log(object.name);
-    </script>
+    console.log(object);
+    console.log(object.name);
+
+    console.log('Ma numesc ' + object.name + ' ' + object.surname + ' si am ' + object.age + ' de ani.');
+    console.log(Math.floor(2020 - (object.age / 2)));
+    console.log(object.surname + ' ' + object.name + ' are ' + object.age + ' de ani');
+    console.log('M-am nascut in ' + (2020 - (object.age)) + ' :)');
+  </script>
   </body>
 </html>
