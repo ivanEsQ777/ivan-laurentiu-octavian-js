@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/">
+    <fieldset>
+      <legend>Volumul paralelipipedului</legend>
+      <label for="length">Lungime: </label>
+      <input type="text"
+        id="length"
+        name="length"
+        placeholder="Lungime"
+      >
+
+      <br><br>
+
+      <label for="width">Latime: </label>
+      <input type="text"
+        id="width"
+        name="width"
+        placeholder="Latime"
+      >
+
+      <br><br>
+
+      <label for="depth">Adancime:</label>
+      <input type="text"
+        id="depth"
+        name="depth"
+        placeholder="Adancimea"
+      >
+
+      <br><br>
+
+      <button type="submit">Calculeaza:</button>
+
+      <p>Valumul este: <span id="result"></span></p>
+    </fieldset>
+  </form>
+
+  <script src="app.js" ></script>
+</body>
+</html>
