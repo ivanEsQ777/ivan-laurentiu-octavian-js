@@ -6,8 +6,23 @@
 </head>
 <body>
 
-    <script>
+    <p id="message"></p>
 
+    <script>
+        var value = window.prompt();
+        var messageElement = document.getElementById('message');
+        var message = '';
+
+        if (value % 2 === 0) {
+            message = 'numarul este par';
+        } 
+        else {
+            message = 'numarul este impar';
+        }
+
+        messageElement.innerText = message;
+
+        console.log(message);
     </script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="message"></p>
+
+  <script>
+    var number = window.prompt('Enter number:');
+    var messageElement = document.getElementById('message');
+    var message ='';
+    var testNumber = 20;
+
+    number = +number;
+
+    if (number > testNumber) {
+      message = `Numarul este mai mare decat ${testNumber}`;
+    } else {
+      message = `Numarul este mai mic decat ${testNumber}`;
+    }
+
+    if (number === testNumber) {
+      message = `Numarul este egal cu ${testNumber}`;
+    }
+
+    messageElement.innerText = message;
+
+  </script>
+</body>
+</html>
