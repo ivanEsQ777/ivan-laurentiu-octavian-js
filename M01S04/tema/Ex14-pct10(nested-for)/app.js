@@ -30,6 +30,16 @@ var person = {
   ]
 };
 
+/*function pluralize (count, words) {
+  if (count > 1) {
+    return words.plural || '';
+  } else {
+    return words.singular || '';
+  }
+} **/
+
+//${pluralize(ageDiff, {singular: 'an', plural: 'ani'})}
+
 let friendsLength = person.friends.length;
 
 for (let i = 0; i < friendsLength; i++) {
