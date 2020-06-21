@@ -27,10 +27,8 @@ setTimeout(() => {
   h1.innerText = userName;
 
   document.body.appendChild(h1);
-
-  //set timeout(() => {}, 3000);
+  setTimeout(() => {
+    paragraphElement.remove();
+  }, 3000);
 }, 3000);
 
-setTimeout(() => {
-  paragraphElement.remove();
-}, 6000);
