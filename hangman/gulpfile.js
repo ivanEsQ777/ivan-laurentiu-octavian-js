@@ -41,8 +41,8 @@ gulp.task('js', function () {
       useEslintrc: true,
       configFile: './config/.eslintrc',
     }))
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError())
+    // .pipe(eslint.format())
+    // .pipe(eslint.failAfterError())
     .pipe(concat('app.min.js'))
     .pipe(mode.production(uglify()))
     .pipe(mode.production(maps.init()))

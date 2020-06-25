@@ -1,3 +1,43 @@
+@keyframes action-blink {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(0, 115px);
+  }
+
+  20% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes action-worry {
+  0% {
+    transform: translate(5px, 0);
+  }
+
+  25% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-5px, 0);
+  }
+
+  75% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(5px, 0);
+  }
+}
+
 .eye {
   background-color: #fff;
   width: 75px;
@@ -5,13 +45,39 @@
   border-radius: 40px;
   position: relative;
   overflow: hidden;
+
+  &--blinking {
+    .eye__lid {
+      animation-name: action-blink;
+      animation-duration: 5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  &--annoyed {
+    .eye__lid {
+      top: -220px;
+    }
+  }
+
+  &--worried {
+    .eye__pupil {
+      animation-name: action-worry;
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
 }
 
 .eye__pupil {
   width: 40px;
   height: 65px;
-  background-color: #000;
-  border-radius: 20px;
+  background-color: black;
+  border-radius: 40px;
   position: absolute;
   top: 24px;
   left: 17px;
@@ -26,10 +92,10 @@
 
 .eye__lid {
   width: 75px;
-  height: 115px;
-  background-color: green;
+  height: 250px;
+  background-color: purple;
   position: absolute;
-  top: -115px;
+  top: -250px;
   z-index: 1;
 }
 
