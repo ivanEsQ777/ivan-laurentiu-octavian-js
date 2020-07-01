@@ -1,10 +1,19 @@
-let words = ['spinach'];
+let words = ['spinach', 'bicycle', 'banana', 'water', 'terminator'];
 let tries = 5;
-let word = words[0];
+
+let getRandomNumber = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
+let randomIntNumber = getRandomNumber(0, words.length - 1); 
+
+let word = words[randomIntNumber];
 let guessedLetters = [];
 let gameEnded = false;
 let wordGuessed = false;
 let keyboard = document.querySelector('.keyboard');
+
+
 
 let renderTries = () => {
   let triesElement = document.getElementById('js-tries');

@@ -16,7 +16,7 @@ class Vehicle {
   }
 
   displaySpeed () {
-    console.log(`Viteza curenta este ${this.speed}`);
+    console.log(`Vehiculul marca ${this.make} de culoarea ${this.color} se deplaseaza cu viteza ${this.speed} km/ora`);
   }
 
   accelerate () {
