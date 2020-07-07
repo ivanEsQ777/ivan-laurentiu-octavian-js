@@ -3,15 +3,20 @@ class Car {
     left = 100,
     top = 100,
     color,
-    topColor
+    topColor,
+    wheelColor,
+    wheelCapColor,
   ) {
     this.left = left;
     this.top = top;
     this.color = color;
     this.topColor = topColor ? topColor : color;
+    this.wheelColor = wheelColor;
+    this.wheelCapColor = wheelCapColor;
   }
 
   areLightsOn = false;
+  areHazardsOn = false;
 
   frame = document.createElement('div');
   car = document.createElement('div');
@@ -34,6 +39,53 @@ class Car {
     this.areLightsOn = false;
 
     this.lightFront.classList.remove('light--on');
+  }
+
+  engageBrake () {
+    this.isBrakeOn = true;
+
+    this.lightBack.classList.add('light--on');
+  }
+
+  disengageBrake () {
+    this.isBrakeOn = false;
+
+    this.lightBack.classList.remove('light--on');
+  }
+
+  toggleHazardsOn () {
+    this.areHazardsOn = true;
+    this.turnLightsOn();
+    this.engageBrake();
+  }
+
+  toggleHazardsOff () {
+    this.areHazardsOn = false;
+    this.turnLightsOff();
+    this.disengageBrake();
+  }
+
+  toggleHazards () {
+    this.toggleHazardsOff();
+
+    window.setTimeout(() => {
+      this.toggleHazardsOn();
+    }, 2000);
+    window.setTimeout(() => {
+      this.toggleHazardsOff();
+    }, 4000);
+    window.setTimeout(() => {
+      this.toggleHazardsOn();
+    }, 6000);
+    window.setTimeout(() => {
+      this.toggleHazardsOff();
+    }, 8000);
+    window.setTimeout(() => {
+      this.toggleHazardsOn();
+    }, 10000);
+    window.setTimeout(() => {
+      this.toggleHazardsOff();
+    }, 12000);
   }
 
   moveFrame (left, top) {
@@ -65,6 +117,26 @@ class Car {
     this.topColor = color;
 
     this.carTop.style.backgroundColor = this.topColor;
+  }
+
+  setWheelColor (color) {
+    if (!color) {
+      return;
+    }
+
+    this.wheelColor = color;
+    this.wheelBack.style.backgroundColor = this.wheelColor;
+    this.wheelFront.style.backgroundColor = this.wheelColor;
+  }
+
+  setWheelCapColor (color) {
+    if (!color) {
+      return;
+    }
+
+    this.wheelCapColor = color;
+    this.wheelCapFront.style.backgroundColor = this.wheelCapColor;
+    this.wheelCapBack.style.backgroundColor = this.wheelCapColor;
   }
 
   render () {
@@ -107,5 +179,5 @@ class Car {
   }
 }
 
-let car = new Car(20, 20, 'black', 'red');
+let car = new Car(20, 20, 'black', 'black', 'red');
 car.render();

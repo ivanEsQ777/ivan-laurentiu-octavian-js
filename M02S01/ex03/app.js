@@ -5,6 +5,7 @@ let Car = {
   speed: 0,
   topSpeed: 140,
   topReverseSpeed: -70,
+  areLightsOn: false,
   displaySpeed: function () {
     console.log(`Viteza curenta este: ${this.speed}`);
   },
@@ -13,6 +14,21 @@ let Car = {
   },
   decelerate() {
     this.setSpeed(--this.speed);
+  },
+  turnLightsOn() {
+    this.areLightsOn = true;
+  },
+  turnLightsOff() {
+    this.areLightsOn = false;
+  },
+  flashLights() {
+    this.turnLightsOff();
+    window.setTimeout(() => {
+      this.turnLightsOn();
+    }, 3000);
+    window.setTimeout(() => {
+      this.turnLightsOff();
+    }, 6000);
   },
   setSpeed: function (speed) {
     if (speed > this.topSpeed) {
