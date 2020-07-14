@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <title>Person Form</title>        
+  <meta charset="utf-8">
+  <title>Person Form</title>
 </head>
+
 <body>
   <form id="personForm">
     <fieldset>
       <legend>Persoana</legend>
       <label for="name">Nume:</label>
-      <input type="text" name="name"> 
-        
+      <input
+        type="text"
+        name="name"
+      >
+
       <br><br>
 
       <label for="surname">Prenume:</label>
-      <input type="text" name="surname"> 
+      <input
+        type="text"
+        name="surname"
+      >
 
       <br><br>
 
-      <label for="age">Varsta</label>
-      <input type="text" name="age">    
-      
+      <label for="age">Varsta:</label>
+      <input
+        type="text"
+        name="age"
+      >
+
       <br><br>
 
       <button type="submit">Adauga</button>
@@ -28,14 +39,76 @@
 
     <fieldset>
       <legend>Detalii</legend>
+
+      <label for="skills">Abilitati:</label>
+      <input
+        type="text"
+        name="skills"
+      >
+      <button
+        type="button"
+        id="addSkill"
+      >+</button>
+    </fieldset>
+
+    <input
+      type="checkbox"
+      name="has-pets"
+      id="has-pets"
+    >
+    <label for="has-pets">Are animale de casa</label>
+
+    <fieldset
+      style="display: none;"
+      class="pet-form"
+    >
+      <legend>Adauga animal</legend>
+
+      <label>Specie:</label>
+      <input
+        type="text"
+        name="species"
+      >
+
+      <br><br>
+
+      <label>Nume:</label>
+      <input
+        type="text"
+        name="pet-name"
+      >
+
+      <br><br>
+
+      <label>Varsta:</label>
+      <input
+        type="text"
+        name="pet-age"
+      >
+
+      <br><br>
+
+      <button
+        type="button"
+        id="addPet"
+      >Adauga Animal</button>
     </fieldset>
   </form>
 
   <div class="person-details">
-    
+
+  </div>
+
+  <div class="person-skills">
+
+  </div>
+
+  <div class="person-pets">
+
   </div>
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="app.js"></script>
 </body>
+
 </html>
