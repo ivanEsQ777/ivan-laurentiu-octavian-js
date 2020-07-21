@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=\, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    .has-error {
+      border: 1px solid red;
+    }
+  </style>
   <title>Form Validation</title>
 </head>
 <body>
@@ -11,27 +16,47 @@
     <fieldset>
       <legend>Persoana</legend>
       <label for="name">*Nume:</label>
-      <input type="text" name="name" placeholder="Nume"> 
+      <input type="text" 
+        name="name" 
+        placeholder="Nume" 
+        required 
+        minlength="5" 
+        maxlength="30"> 
         
       <br><br>
 
       <label for="surname">*Prenume:</label>
-      <input type="text" name="surname" placeholder="Prenume"> 
+      <input type="text" 
+        name="surname" 
+        placeholder="Prenume" 
+        required 
+        minlength="5" 
+        maxlength="30"> 
 
       <br><br>
 
-      <label for="age">*Email: </label>
-      <input type="email" name="email" placeholder="Email"> 
+      <label for="email">*Email: </label>
+      <input type="email" 
+        name="email" 
+        placeholder="Email" 
+        required> 
 
       <br><br>
 
       <label for="age">*Varsta: </label>
-      <input type="text" name="age" placeholder="Varsta">    
+      <input type="text" 
+        name="age" 
+        placeholder="Varsta" 
+        required
+        min="14"
+        max="99">    
       
       <br><br>
 
       <button type="submit">Adauga</button>
     </fieldset>
   </form>
+  <script src="node_modules/pristinejs/dist/pristine.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
